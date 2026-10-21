@@ -21,7 +21,6 @@ export function Story({ content }: StoryProps) {
         <div className="story-copy">
           <h2 id="story-title">{content.story.title}</h2>
           <p>{content.story.body}</p>
-          <p className="text-link">{content.story.link}</p>
           <span className="flight-path flight-path-story" aria-hidden="true" />
         </div>
       </div>

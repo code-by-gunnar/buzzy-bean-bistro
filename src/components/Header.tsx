@@ -1,4 +1,4 @@
-import logo from '../assets/buzzy-bean-logo.png'
+import logo from '../assets/buzzy-bean-logo-web.png'
 import { siteContent, type Language, type SiteContent } from '../content'
 
 interface HeaderProps {
@@ -15,8 +15,8 @@ export function Header({ content, language, setLanguage }: HeaderProps) {
           <img
             className="brand-logo"
             src={logo}
-            width="1254"
-            height="1254"
+          width="512"
+          height="512"
             alt={content.accessibility.logoAlt}
           />
         </a>

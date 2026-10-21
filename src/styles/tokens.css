@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Baloo 2';
-  src: url('../assets/fonts/baloo-2-800.ttf') format('truetype');
+  src: url('../assets/fonts/baloo-2-800.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
   font-weight: 800;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../assets/fonts/dm-sans-400.ttf') format('truetype');
+  src: url('../assets/fonts/dm-sans-400.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../assets/fonts/dm-sans-600.ttf') format('truetype');
+  src: url('../assets/fonts/dm-sans-600.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
   font-weight: 600;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../assets/fonts/dm-sans-700.ttf') format('truetype');
+  src: url('../assets/fonts/dm-sans-700.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
   font-weight: 700;
@@ -34,7 +34,7 @@
   --color-espresso: #481705;
   --color-espresso-soft: #6f321c;
   --color-amber: #f5a500;
-  --color-amber-deep: #de8900;
+  --color-amber-deep: #a85a00;
   --color-cream: #fff4d8;
   --color-white: #fffdf8;
   --color-focus: #147c72;

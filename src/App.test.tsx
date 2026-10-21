@@ -24,7 +24,7 @@ describe('Buzzy Bean landing page', () => {
   })
 
   test('provides usable section navigation and contact links', () => {
-    render(<App />)
+    const { container } = render(<App />)
 
     const navigation = screen.getByRole('navigation', { name: 'Navigare principală' })
     expect(within(navigation).getByRole('link', { name: 'Poveste' })).toHaveAttribute(
@@ -42,6 +42,13 @@ describe('Buzzy Bean landing page', () => {
       'href',
       'mailto:coffee@buzzybean.ro',
     )
+
+    const footer = container.querySelector('footer')
+    expect(footer).not.toBeNull()
+    expect(within(footer!).getByText('buzzybean.ro')).not.toHaveAttribute('href')
+    expect(
+      within(footer!).getByRole('link', { name: 'coffee@buzzybean.ro' }),
+    ).toHaveAttribute('href', 'mailto:coffee@buzzybean.ro')
   })
 
   test('renders all menu categories and descriptive photography', () => {

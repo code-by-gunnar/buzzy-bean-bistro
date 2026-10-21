@@ -282,18 +282,11 @@
   rotate: -2deg;
 }
 
-.story-copy > p:not(.text-link) {
+.story-copy > p {
   max-width: 37rem;
   margin-top: var(--space-5);
   color: var(--color-espresso-soft);
   font-size: clamp(1.05rem, 1.35vw, 1.25rem);
-}
-
-.text-link {
-  display: inline-block;
-  margin-top: var(--space-4);
-  border-bottom: 3px solid var(--color-amber);
-  font-weight: 700;
 }
 
 .flight-path-story {
@@ -559,9 +552,21 @@
   gap: clamp(1.5rem, 3vw, 3rem);
 }
 
+.footer-contact {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
 .footer-domain {
   color: var(--color-amber);
   font-weight: 700;
+}
+
+.footer-contact a {
+  color: var(--color-cream);
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .footer-languages button {
@@ -609,7 +614,9 @@
 @media (max-width: 56rem) {
   .header-inner {
     grid-template-columns: 5.25rem 1fr auto;
+    grid-template-rows: auto auto;
     min-height: 5.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .brand-logo {
@@ -618,7 +625,12 @@
   }
 
   .primary-nav {
-    display: none;
+    display: flex;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.94rem;
   }
 
   .header-action {
@@ -707,6 +719,13 @@
 
   .language-switcher {
     justify-self: end;
+  }
+
+  .primary-nav a:last-child {
+    padding: 0.35rem 0.85rem;
+    border: var(--border-strong);
+    border-radius: var(--radius-button);
+    background: var(--color-amber);
   }
 
   .hero h1 {

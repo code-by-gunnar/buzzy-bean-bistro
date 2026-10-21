@@ -34,7 +34,6 @@ export interface SiteContent {
   story: {
     title: string
     body: string
-    link: string
   }
   menu: {
     title: string
@@ -94,7 +93,6 @@ export const siteContent: Record<Language, SiteContent> = {
       title: 'O pauză bună începe aici.',
       body:
         'Buzzy Bean este cafeneaua de cartier în care cafeaua atent pregătită întâlnește gustările proaspete și conversațiile fără grabă.',
-      link: 'Povestea noastră',
     },
     menu: {
       title: 'Ce punem pe masă.',
@@ -165,7 +163,6 @@ export const siteContent: Record<Language, SiteContent> = {
       title: 'A good break starts here.',
       body:
         'Buzzy Bean is the neighbourhood café where carefully made coffee meets fresh bites and conversations with nowhere else to be.',
-      link: 'Our story',
     },
     menu: {
       title: 'What we bring to the table.',
