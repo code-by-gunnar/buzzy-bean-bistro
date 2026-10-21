@@ -19,4 +19,11 @@
 - Licence: Unsplash License — https://unsplash.com/license
 - Local processing: downloaded at 2400 px width and converted to WebP at quality 84.
 
+## Café interior
+
+- Photographer: Monaz Nazary
+- Source: https://unsplash.com/photos/zqVoqDAWZeg
+- Licence: Unsplash License — https://unsplash.com/license
+- Local processing: downloaded at 2400 px width and converted to WebP at quality 84.
+
 The Unsplash License permits free commercial and non-commercial use. Attribution is not required, but is recorded here for provenance and credit.

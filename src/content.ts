@@ -10,8 +10,14 @@ export interface SiteContent {
   accessibility: {
     skipToContent: string
     chooseLanguage: string
+    mainNavigation: string
+    footerNavigation: string
+    selected: string
+    notSelected: string
+    languageOptions: Record<Language, string>
     logoAlt: string
     heroImageAlt: string
+    storyImageAlt: string
     atmosphereImageAlt: string
   }
   nav: {
@@ -62,8 +68,14 @@ export const siteContent: Record<Language, SiteContent> = {
     accessibility: {
       skipToContent: 'Sari la conținut',
       chooseLanguage: 'Alege limba',
+      mainNavigation: 'Navigare principală',
+      footerNavigation: 'Navigare subsol',
+      selected: 'selectată',
+      notSelected: 'neselectată',
+      languageOptions: { ro: 'Română', en: 'English' },
       logoAlt: 'Buzzy Bean Café & Bistro',
       heroImageAlt: 'Cafea cu lapte și patiserie servite la o masă de cafenea',
+      storyImageAlt: 'Interior luminos de cafenea cu mese din lemn și plante verzi',
       atmosphereImageAlt: 'Prietene petrecând timp împreună într-o cafenea luminoasă',
     },
     nav: {
@@ -127,8 +139,14 @@ export const siteContent: Record<Language, SiteContent> = {
     accessibility: {
       skipToContent: 'Skip to content',
       chooseLanguage: 'Choose language',
+      mainNavigation: 'Primary navigation',
+      footerNavigation: 'Footer navigation',
+      selected: 'selected',
+      notSelected: 'not selected',
+      languageOptions: { ro: 'Romanian', en: 'English' },
       logoAlt: 'Buzzy Bean Café & Bistro',
       heroImageAlt: 'Latte and pastry served at a café table',
+      storyImageAlt: 'Bright café interior with wooden tables and green plants',
       atmosphereImageAlt: 'Friends spending time together in a bright café',
     },
     nav: {
