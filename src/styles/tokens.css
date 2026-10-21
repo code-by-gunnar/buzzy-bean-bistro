@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Baloo 2';
+  src: url('../assets/fonts/baloo-2-800.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/dm-sans-400.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/dm-sans-600.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/dm-sans-700.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  --color-espresso: #481705;
+  --color-espresso-soft: #6f321c;
+  --color-amber: #f5a500;
+  --color-amber-deep: #de8900;
+  --color-cream: #fff4d8;
+  --color-white: #fffdf8;
+  --color-focus: #147c72;
+  --font-display: 'Baloo 2', 'Arial Rounded MT Bold', sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --container: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --space-1: 0.5rem;
+  --space-2: 0.875rem;
+  --space-3: 1.25rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+  --space-7: 7rem;
+  --radius-small: 1rem;
+  --radius-button: 999px;
+  --shadow-soft: 0 1.25rem 3rem rgb(72 23 5 / 14%);
+  --border-strong: 2px solid var(--color-espresso);
+  --duration-fast: 160ms;
+  --duration-slow: 700ms;
+}

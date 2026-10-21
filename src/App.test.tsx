@@ -86,4 +86,27 @@ describe('Buzzy Bean landing page', () => {
       screen.getByRole('button', { name: /English.*selected/ }),
     ).toHaveAttribute('aria-pressed', 'true')
   })
+
+  test('provides stable, shared styling hooks for responsive presentation', () => {
+    const { container } = render(<App />)
+
+    expect(screen.getByRole('link', { name: 'Sari la conținut' })).toHaveAttribute(
+      'href',
+      '#main-content',
+    )
+    expect(screen.getByRole('button', { name: /Română.*selectată/ })).toHaveTextContent(
+      'RO',
+    )
+    expect(screen.getByRole('button', { name: /English.*neselectată/ })).toHaveTextContent(
+      'EN',
+    )
+
+    for (const image of screen.getAllByRole('img')) {
+      expect(Number(image.getAttribute('width'))).toBeGreaterThan(0)
+      expect(Number(image.getAttribute('height'))).toBeGreaterThan(0)
+    }
+
+    expect(container.querySelectorAll('.section-inner')).toHaveLength(4)
+    expect(container.querySelector('.hero > .page-container')).toBeInTheDocument()
+  })
 })

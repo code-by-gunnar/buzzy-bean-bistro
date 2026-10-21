@@ -27,3 +27,10 @@
 - Local processing: downloaded at 2400 px width and converted to WebP at quality 84.
 
 The Unsplash License permits free commercial and non-commercial use. Attribution is not required, but is recorded here for provenance and credit.
+
+## Typography
+
+- Baloo 2, weight 800 — Google Fonts, licensed under the SIL Open Font License 1.1.
+- DM Sans, weights 400, 600, and 700 — Google Fonts, licensed under the SIL Open Font License 1.1.
+- Font source: https://fonts.google.com/
+- Licence: https://openfontlicense.org/
