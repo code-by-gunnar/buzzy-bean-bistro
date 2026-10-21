@@ -125,7 +125,7 @@
 
 .hero {
   position: relative;
-  min-height: calc(100svh - 7rem);
+  min-height: calc(100svh - 10rem);
   background: var(--color-cream);
 }
 
@@ -143,7 +143,7 @@
 
 .hero-inner {
   display: grid;
-  min-height: calc(100svh - 7rem);
+  min-height: calc(100svh - 10rem);
   grid-template-columns: minmax(0, 0.95fr) minmax(26rem, 1.05fr);
   align-items: center;
   gap: clamp(2rem, 4vw, 5rem);
@@ -154,7 +154,9 @@
 .hero-copy {
   position: relative;
   z-index: 3;
+  align-self: start;
   max-width: 43rem;
+  margin-top: clamp(3rem, 7vw, 7rem);
 }
 
 .hero h1 {
@@ -481,9 +483,12 @@
 }
 
 .visit-mascot img {
-  width: 130%;
+  position: absolute;
+  top: -2%;
+  left: -33%;
+  width: 167%;
+  height: auto;
   max-width: none;
-  translate: -12% -14%;
 }
 
 .visit-details {
@@ -638,6 +643,7 @@
 
   .hero-copy {
     max-width: 39rem;
+    margin-top: 0;
   }
 
   .hero h1 {
@@ -683,10 +689,6 @@
   :root {
     --gutter: 1.25rem;
     --space-7: 5rem;
-  }
-
-  html {
-    scroll-padding-top: 6.25rem;
   }
 
   .header-inner {
