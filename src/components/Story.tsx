@@ -1,4 +1,4 @@
-import storyImage from '../assets/cafe-interior-concept.webp'
+import storyImage from '../assets/cafe-interior-natural.webp'
 import mascot from '../assets/buzzy-mascot.webp'
 import type { SiteContent } from '../content'
 import { BrushHeading, FlightTrail, Sparks, Wave } from './Visuals'
@@ -14,8 +14,8 @@ export function Story({ content }: StoryProps) {
         <div className="story-media media-frame">
           <img
             src={storyImage}
-            width="1448"
-            height="1086"
+            width="1600"
+            height="1109"
             alt={content.accessibility.storyImageAlt}
             loading="lazy"
           />
@@ -28,10 +28,6 @@ export function Story({ content }: StoryProps) {
             leadingWords={3}
           />
           <p>{content.story.body}</p>
-          <a className="story-link" href="/menu/">
-            {content.nav.menu}
-            <span aria-hidden="true">→</span>
-          </a>
           <FlightTrail className="story-trail" />
         </div>
       </div>

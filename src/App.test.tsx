@@ -20,6 +20,11 @@ describe('Buzzy Bean landing page', () => {
     expect(container.querySelector('main')).toBeInTheDocument()
     expect(container.querySelector('footer')).toBeInTheDocument()
     expect(container.querySelector('section#story')).toBeInTheDocument()
+    expect(container.querySelector('section#story a')).toBeNull()
+    expect(container.querySelector('#menu .full-menu-action')).toHaveAttribute(
+      'href',
+      '/menu/',
+    )
     expect(container.querySelector('section#menu')).toBeInTheDocument()
     expect(container.querySelector('section#visit')).toBeInTheDocument()
   })

@@ -1,5 +1,35 @@
 # Image sources
 
+## Interior replacement — owner supplied
+
+- Selected source: `images/kling_20261022_IMAGE_Interior_p_1574_1.png`.
+  The owner supplied three new interior candidates and preferred this angle.
+  Its window light, white brick, plants, and wooden furniture complement
+  the selected `cafe-friends-natural.webp` atmosphere scene.
+- Shipped asset: `cafe-interior-natural.webp`, 1600×1109, WebP quality 86.
+- Processing: deterministic crop `(0, 0, 2368, 1640)` from the 2368×1760
+  source removes the lower watermark strip, followed by proportional resize.
+  The scene was not regenerated or retouched.
+- Originals remain unchanged in the owner's ignored `images/` folder.
+  The previous `cafe-interior-concept.webp` is retained but no longer used by
+  the story component. Existing presentation exports remain unchanged.
+- This is generated concept imagery, not a photograph of actual premises.
+
+## Atmosphere replacement — owner supplied
+
+- Selected source: `images/kling_20261022_IMAGE_Candid_doc_1501_3.png`.
+  The owner supplied three Kling-generated candidates; the selected image
+  shows three women and one man sharing coffee and pastry.
+- Shipped asset: `cafe-friends-natural.webp`, 1600×1109, WebP quality 86.
+- Processing: deterministic crop `(0, 0, 2368, 1640)` from the 2368×1760
+  source removes the lower watermark strip, followed by proportional resize.
+  No people, expressions, or other scene elements were regenerated or retouched.
+- The original files remain unchanged in the owner's ignored `images/` folder.
+  The previous `cafe-friends-concept.webp` is retained but no longer used by
+  the atmosphere component. Existing presentation exports remain unchanged.
+- This remains generated concept imagery, not a photograph of actual Buzzy
+  Bean customers or premises.
+
 ## Full menu poster — owner supplied
 
 - Source: `WhatsApp Image 2026-10-21 at 18.35.12.jpeg`, supplied by the owner

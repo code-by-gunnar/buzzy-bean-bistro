@@ -1,5 +1,6 @@
 .site-shell {
   overflow: clip;
+  --edge-bleed: calc(var(--gutter) + max(0px, (100vw - var(--container)) / 2));
 }
 .photo-shape-definitions {
   position: absolute;
@@ -401,19 +402,6 @@
   font-size: clamp(1.1rem, 1.5vw, 1.65rem);
   line-height: 1.5;
 }
-.story-link {
-  display: inline-flex;
-  min-height: 2.75rem;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1.3rem;
-  border-bottom: 2px solid var(--color-amber);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-.story-link:hover {
-  gap: 1.5rem;
-}
 .story-trail {
   bottom: -3.5rem;
   left: -5rem;
@@ -444,11 +432,14 @@
 }
 .menu-heading-row {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4vw;
   min-height: clamp(16rem, 26vw, 29rem);
   align-items: center;
 }
 .menu h2 {
+  min-width: 0;
   font-size: clamp(4.8rem, 8vw, 9rem);
   line-height: 1;
 }
@@ -456,16 +447,10 @@
   color: #905000;
 }
 .menu-photo {
-  position: absolute;
-  top: -6rem;
-  right: calc(-1 * var(--gutter));
-  width: 50%;
-  height: 112%;
-  border-radius: 45% 0 40% 50%;
-  transform: rotate(-6deg);
-}
-.menu-photo img {
-  transform: rotate(6deg) scale(1.13);
+  position: relative;
+  width: calc(100% + var(--edge-bleed) + 1rem);
+  height: clamp(16rem, 26vw, 29rem);
+  clip-path: url(#hero-photo-shape);
 }
 .menu-sparks {
   top: 2rem;
@@ -524,19 +509,17 @@
 }
 .atmosphere-media {
   position: relative;
-  height: 100%;
-  min-height: 34rem;
-  margin-left: calc(-1 * var(--gutter));
-  margin-right: -3rem;
-  background: var(--color-cream);
+  width: calc(100% + var(--edge-bleed) + 1rem);
+  margin-left: calc(-1 * (var(--edge-bleed) + 1rem));
+  height: auto;
+  aspect-ratio: 1600 / 1109;
   clip-path: url(#friends-photo-shape);
 }
 .atmosphere-media img {
   position: absolute;
-  inset: 0.5rem;
-  width: calc(100% - 1rem);
-  height: calc(100% - 1rem);
-  clip-path: url(#friends-photo-shape);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-position: 45% center;
 }
 .atmosphere-copy {
@@ -577,7 +560,7 @@
   display: grid;
   min-height: clamp(35rem, 40vw, 48rem);
   grid-template-columns: 1.12fr 0.88fr;
-  align-items: start;
+  align-items: center;
   gap: 5vw;
   padding-top: 4rem;
   padding-bottom: 5rem;
@@ -585,6 +568,7 @@
 .visit-intro {
   position: relative;
   align-self: stretch;
+  text-align: center;
 }
 .visit h2 {
   font-size: clamp(3.5rem, 6.4vw, 7.5rem);
@@ -621,7 +605,10 @@
   left: -3rem;
 }
 .visit-details {
-  padding-top: 2rem;
+  width: 100%;
+  max-width: 34rem;
+  justify-self: center;
+  text-align: center;
   font-size: clamp(1.05rem, 1.55vw, 1.75rem);
 }
 .location-status,
@@ -635,14 +622,16 @@
 }
 .hours-list > div {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 1rem;
+  text-align: left;
 }
 .hours-list dt {
   font-weight: 700;
 }
 .hours-list dd {
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 .email-link {
   display: block;
@@ -894,11 +883,6 @@
   .menu h2 {
     font-size: 6.2vw;
   }
-  .menu-photo {
-    width: 48%;
-    height: 20rem;
-    top: -4rem;
-  }
   .menu-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 2.5rem;
@@ -920,10 +904,6 @@
     min-height: 39rem;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-  }
-  .atmosphere-media {
-    min-height: 30rem;
-    margin-right: 0;
   }
   .atmosphere h2 {
     font-size: 4.7vw;
@@ -948,7 +928,6 @@
   }
   .visit-details {
     font-size: 1rem;
-    padding-top: 1rem;
   }
   .hours-list > div {
     grid-template-columns: 1fr;
@@ -1063,6 +1042,7 @@
     margin-left: 0;
   }
   .story-copy {
+    order: -1;
     width: 100%;
     padding-bottom: 0;
   }
@@ -1073,13 +1053,11 @@
     margin-top: 1.8rem;
     max-width: 35ch;
   }
-  .story-link {
-    font-size: 1rem;
-  }
   .story-trail {
-    left: -1rem;
-    bottom: -5rem;
-    width: 18rem;
+    left: auto;
+    right: 0;
+    bottom: -2.25rem;
+    width: 10rem;
   }
   .story-mascot {
     width: 12rem;
@@ -1104,14 +1082,9 @@
     position: relative;
     top: auto;
     right: auto;
-    width: calc(100% + 3rem);
-    height: 15rem;
-    margin-left: -1.5rem;
-    border-radius: 48% 12% 45% 16%;
-    transform: none;
-  }
-  .menu-photo img {
-    transform: none;
+    width: calc(100% + var(--edge-bleed) + 1rem);
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
   .menu-sparks {
     display: none;
@@ -1155,12 +1128,6 @@
     padding-top: 1rem;
     padding-bottom: 7rem;
   }
-  .atmosphere-media {
-    width: calc(100% + 3rem);
-    height: 23rem;
-    min-height: 0;
-    margin-left: -1.5rem;
-  }
   .atmosphere-copy {
     padding-bottom: 2rem;
   }
@@ -1203,11 +1170,12 @@
     position: relative;
     z-index: 2;
     width: 100%;
+    margin-inline: auto;
     padding-top: 0;
     font-size: 1rem;
   }
   .hours-list > div {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.5rem;
   }
   .location-status,
