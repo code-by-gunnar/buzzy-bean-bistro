@@ -1,5 +1,24 @@
 # Image sources
 
+## Full menu poster — owner supplied
+
+- Source: `WhatsApp Image 2026-10-21 at 18.35.12.jpeg`, supplied by the owner
+  for the menu expansion on 21 October 2026.
+- The owner approved using its 25 product names, Romanian descriptions, and
+  prices for the bilingual menu. English descriptions are translations.
+- Reference asset: `menu-poster.webp`, 1024×1536, WebP quality 92. The
+  original poster is preserved for provenance, but is not rendered on the site.
+- The 25 standalone assets in `products/` were recreated with built-in OpenAI
+  Image Gen, using the owner's poster as a visual reference. They are
+  illustrative product images, not photographs of actual served dishes.
+- Each asset is a text-free, transparent 512×512 WebP (quality 88). Original
+  generated PNGs are retained in the local generation output directory.
+  Exact prompts are recorded in `design/product-image-prompts.json`.
+- All menu text is separately rendered as selectable, accessible HTML.
+- Each product and its shared price is defined once in `src/menuContent.ts`.
+- The supplied poster does not specify portion weights, complete allergen
+  declarations, or dietary certifications; none have been invented.
+
 ## Concept fidelity assets — 21 October 2026
 
 The live page now uses the following concept-directed assets. The original

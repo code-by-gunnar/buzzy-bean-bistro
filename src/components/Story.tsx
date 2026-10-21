@@ -28,7 +28,7 @@ export function Story({ content }: StoryProps) {
             leadingWords={3}
           />
           <p>{content.story.body}</p>
-          <a className="story-link" href="#menu">
+          <a className="story-link" href="/menu/">
             {content.nav.menu}
             <span aria-hidden="true">→</span>
           </a>

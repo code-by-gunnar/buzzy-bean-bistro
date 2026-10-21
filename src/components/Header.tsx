@@ -7,9 +7,16 @@ interface HeaderProps {
   content: SiteContent
   language: Language
   setLanguage: (language: Language) => void
+  onMenuPage?: boolean
 }
 
-export function Header({ content, language, setLanguage }: HeaderProps) {
+export function Header({
+  content,
+  language,
+  setLanguage,
+  onMenuPage = false,
+}: HeaderProps) {
+  const homePrefix = onMenuPage ? '/' : ''
   const headerRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -67,7 +74,7 @@ export function Header({ content, language, setLanguage }: HeaderProps) {
       <div className="page-container header-inner">
         <a
           className="brand-link"
-          href="#top"
+          href={`${homePrefix}#top`}
           aria-label="Buzzy Bean"
           onClick={() => setMenuOpen(false)}
         >
@@ -100,9 +107,11 @@ export function Header({ content, language, setLanguage }: HeaderProps) {
             aria-label={content.accessibility.mainNavigation}
             onClick={() => setMenuOpen(false)}
           >
-            <a href="#story">{content.nav.story}</a>
-            <a href="#menu">{content.nav.menu}</a>
-            <a href="#visit">{content.nav.visit}</a>
+            <a href={`${homePrefix}#story`}>{content.nav.story}</a>
+            <a href="/menu/" aria-current={onMenuPage ? 'page' : undefined}>
+              {content.nav.menu}
+            </a>
+            <a href={`${homePrefix}#visit`}>{content.nav.visit}</a>
           </nav>
 
           <div
@@ -133,7 +142,7 @@ export function Header({ content, language, setLanguage }: HeaderProps) {
 
           <a
             className="button button-small header-action"
-            href="#visit"
+            href={`${homePrefix}#visit`}
             onClick={() => setMenuOpen(false)}
           >
             {content.nav.primaryAction}

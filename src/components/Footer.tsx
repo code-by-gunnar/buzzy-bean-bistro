@@ -5,18 +5,31 @@ interface FooterProps {
   content: SiteContent
   language: Language
   setLanguage: (language: Language) => void
+  onMenuPage?: boolean
 }
 
-export function Footer({ content, language, setLanguage }: FooterProps) {
+export function Footer({
+  content,
+  language,
+  setLanguage,
+  onMenuPage = false,
+}: FooterProps) {
+  const homePrefix = onMenuPage ? '/' : ''
   return (
     <footer className="site-footer">
-      <a className="footer-brand" href="#top" aria-label="Buzzy Bean">
+      <a
+        className="footer-brand"
+        href={`${homePrefix}#top`}
+        aria-label="Buzzy Bean"
+      >
         <Brand wordmarkOnly />
       </a>
       <nav aria-label={content.accessibility.footerNavigation}>
-        <a href="#story">{content.nav.story}</a>
-        <a href="#menu">{content.nav.menu}</a>
-        <a href="#visit">{content.nav.visit}</a>
+        <a href={`${homePrefix}#story`}>{content.nav.story}</a>
+        <a href="/menu/" aria-current={onMenuPage ? 'page' : undefined}>
+          {content.nav.menu}
+        </a>
+        <a href={`${homePrefix}#visit`}>{content.nav.visit}</a>
       </nav>
       <div className="footer-contact">
         <span className="footer-domain">{content.footer.domain}</span>

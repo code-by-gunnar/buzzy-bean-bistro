@@ -1,0 +1,364 @@
+.full-menu-action {
+  gap: 1.5rem;
+  margin-top: 3rem;
+  background: var(--color-cream);
+}
+.menu-list h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+.primary-nav a[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+.catalog-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+}
+.catalog-hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+  min-height: 32rem;
+  padding-top: 1.5rem;
+  padding-bottom: 6rem;
+}
+.catalog-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+.catalog-back {
+  display: inline-flex;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.catalog-back:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+.catalog-hero h1 {
+  position: relative;
+  font-size: clamp(3.6rem, 5.3vw, 6.25rem);
+  line-height: 1.08;
+}
+.catalog-hero h1 > span {
+  display: block;
+  color: var(--color-heading-accent);
+}
+.catalog-hero h1 .sparks {
+  top: -0.5rem;
+  left: -3rem;
+}
+.catalog-hero-copy > p {
+  max-width: 38rem;
+  margin-top: 1.75rem;
+  font-size: clamp(1.05rem, 1.35vw, 1.4rem);
+}
+.catalog-hero-copy > .flight-trail {
+  width: 19rem;
+  bottom: -5rem;
+  right: 0;
+}
+.catalog-hero-photo {
+  height: 25rem;
+  clip-path: url(#hero-photo-shape);
+}
+.catalog-hero-photo img {
+  object-position: center;
+}
+
+.catalog-category-nav {
+  position: sticky;
+  z-index: 30;
+  top: calc(var(--header-height, 7rem) - 1px);
+  background: var(--color-white);
+  border-bottom: 1px solid rgb(71 24 5 / 15%);
+}
+.catalog-category-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding-block: 0.65rem;
+}
+.catalog-category-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-button);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.catalog-category-links a:hover,
+.catalog-category-links a:focus-visible {
+  background: var(--color-honey);
+}
+
+.catalog-section {
+  position: relative;
+  padding-block: 4rem 6rem;
+  scroll-margin-top: 4.5rem;
+  background: var(--color-white);
+}
+.catalog-section:nth-of-type(odd) {
+  background: var(--color-cream);
+}
+.catalog-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.catalog-section-heading h2 {
+  font-size: clamp(2.8rem, 4.7vw, 5rem);
+}
+.catalog-subtitle {
+  margin-top: 0.85rem;
+  color: var(--color-espresso-soft);
+  font-size: 1rem;
+}
+.catalog-introduction {
+  max-width: 30ch;
+  padding-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+.catalog-products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 1.75rem;
+  row-gap: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.catalog-product {
+  min-width: 0;
+}
+.product-artwork {
+  display: block;
+  width: 100%;
+  height: 10.5rem;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  object-fit: contain;
+}
+.catalog-product-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.65rem;
+}
+.catalog-product h3 {
+  font-size: clamp(1.3rem, 1.65vw, 1.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.catalog-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.catalog-price > span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.catalog-price small {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.catalog-product > p {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-espresso-soft);
+}
+.catalog-section-brews .catalog-products {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.catalog-section-combos .catalog-products {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 64rem;
+  margin-inline: auto;
+}
+.catalog-section-combos .product-artwork {
+  height: 11rem;
+  object-position: left center;
+}
+.catalog-contact {
+  position: relative;
+  padding-block: 3rem 6.5rem;
+  background: var(--color-white);
+}
+.catalog-contact-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+.catalog-contact h2 {
+  max-width: 18ch;
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
+}
+.catalog-contact p {
+  margin-top: 1rem;
+}
+.catalog-contact .button {
+  flex-shrink: 0;
+  gap: 1.5rem;
+}
+
+@media (max-width: 74rem) {
+  .catalog-hero-inner {
+    gap: 2rem;
+  }
+  .catalog-products,
+  .catalog-section-brews .catalog-products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem 2rem;
+  }
+  .catalog-section-combos .catalog-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 40rem;
+  }
+  .catalog-product h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 56rem) {
+  .catalog-hero-inner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+  .catalog-hero h1 {
+    max-width: 14ch;
+    font-size: clamp(3rem, 7.8vw, 4.5rem);
+  }
+  .catalog-hero-copy > p {
+    max-width: 44ch;
+  }
+  .catalog-hero-photo {
+    position: absolute;
+    right: -7rem;
+    bottom: -5rem;
+    width: 20rem;
+    height: 20rem;
+    opacity: 0.12;
+  }
+  .catalog-hero-copy > .flight-trail {
+    display: none;
+  }
+  .catalog-section-heading {
+    display: block;
+  }
+  .catalog-introduction {
+    max-width: 50ch;
+    margin-top: 1rem;
+  }
+  .catalog-products,
+  .catalog-section-brews .catalog-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem 2rem;
+  }
+  .product-artwork {
+    height: 11rem;
+  }
+  .catalog-section-brews .product-artwork {
+    height: 11rem;
+  }
+  .catalog-contact-inner {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .full-menu-action {
+    width: 100%;
+    padding-inline: 1rem;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .catalog-back {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .catalog-hero-inner {
+    padding-bottom: 3.5rem;
+  }
+  .catalog-hero h1 {
+    font-size: clamp(2.6rem, 10.3vw, 4rem);
+  }
+  .catalog-hero h1 .sparks {
+    display: none;
+  }
+  .catalog-hero-copy > p {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+  }
+  .catalog-category-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2rem 0.5rem;
+    padding-block: 0.5rem;
+  }
+  .catalog-category-links a {
+    padding-inline: 0.25rem;
+    font-size: 0.88rem;
+  }
+  .catalog-section {
+    padding-block: 2.5rem 4rem;
+    scroll-margin-top: 7rem;
+  }
+  .catalog-section-heading {
+    margin-bottom: 1.75rem;
+  }
+  .catalog-section-heading h2 {
+    font-size: clamp(2.2rem, 8.6vw, 3.1rem);
+  }
+  .catalog-introduction,
+  .catalog-subtitle {
+    font-size: 0.95rem;
+  }
+  .catalog-products,
+  .catalog-section-brews .catalog-products,
+  .catalog-section-combos .catalog-products {
+    gap: 2.25rem 1.1rem;
+  }
+  .product-artwork,
+  .catalog-section-brews .product-artwork,
+  .catalog-section-combos .product-artwork {
+    height: 7.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .catalog-product h3 {
+    font-size: 1.25rem;
+  }
+  .catalog-section-combos .catalog-product h3 {
+    min-height: 2.4em;
+  }
+  .catalog-product > p {
+    font-size: 1rem;
+  }
+  .catalog-contact {
+    padding-block: 2rem 5rem;
+  }
+  .catalog-contact h2 {
+    font-size: 2.5rem;
+  }
+}

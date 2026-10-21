@@ -1,10 +1,5 @@
 export type Language = 'ro' | 'en'
 
-export interface MenuItem {
-  title: string
-  description: string
-}
-
 export interface SiteContent {
   languageName: string
   accessibility: {
@@ -39,7 +34,6 @@ export interface SiteContent {
   }
   menu: {
     title: string
-    items: MenuItem[]
   }
   atmosphere: {
     title: string
@@ -100,24 +94,6 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     menu: {
       title: 'Ce punem pe masă.',
-      items: [
-        {
-          title: 'Cafea & espresso',
-          description: 'Clasică, atent extrasă și exact pe gustul tău.',
-        },
-        {
-          title: 'Băuturi de sezon',
-          description: 'Rețete luminoase care se schimbă odată cu vremea.',
-        },
-        {
-          title: 'Patiserie proaspătă',
-          description: 'Ceva bun, fraged și potrivit lângă cafea.',
-        },
-        {
-          title: 'Bistro lejer',
-          description: 'Gustări simple pentru dimineți și prânzuri fără grabă.',
-        },
-      ],
     },
     atmosphere: {
       title: 'Loc pentru idei, prieteni și încă o cafea.',
@@ -172,24 +148,6 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     menu: {
       title: 'What we bring to the table.',
-      items: [
-        {
-          title: 'Coffee & espresso',
-          description: 'Classic, carefully extracted, and made just how you like it.',
-        },
-        {
-          title: 'Seasonal drinks',
-          description: 'Bright recipes that change with the weather.',
-        },
-        {
-          title: 'Fresh pastries',
-          description: 'Something flaky and delicious beside your coffee.',
-        },
-        {
-          title: 'Light bistro',
-          description: 'Simple bites for easy mornings and unhurried lunches.',
-        },
-      ],
     },
     atmosphere: {
       title: 'Room for ideas, friends, and one more coffee.',

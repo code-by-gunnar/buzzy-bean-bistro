@@ -6,6 +6,7 @@ import App from './App'
 describe('Buzzy Bean landing page', () => {
   beforeEach(() => {
     window.localStorage.clear()
+    window.history.replaceState({}, '', '/')
   })
 
   test('renders the complete Romanian page with semantic landmarks', () => {
@@ -34,7 +35,7 @@ describe('Buzzy Bean landing page', () => {
     ).toHaveAttribute('href', '#story')
     expect(
       within(navigation).getByRole('link', { name: 'Meniu' }),
-    ).toHaveAttribute('href', '#menu')
+    ).toHaveAttribute('href', '/menu/')
     expect(
       within(navigation).getByRole('link', { name: 'Vizitează-ne' }),
     ).toHaveAttribute('href', '#visit')
@@ -56,10 +57,10 @@ describe('Buzzy Bean landing page', () => {
     render(<App />)
 
     for (const category of [
-      'Cafea & espresso',
-      'Băuturi de sezon',
-      'Patiserie proaspătă',
-      'Bistro lejer',
+      'Honey Pastries',
+      'Honey Specials',
+      'Buzzy Brews',
+      'Sweet Combos',
     ]) {
       expect(
         screen.getByRole('heading', { name: category }),
@@ -96,7 +97,11 @@ describe('Buzzy Bean landing page', () => {
     const navigation = screen.getByRole('navigation', {
       name: 'Navigare principală',
     })
-    fireEvent.click(within(navigation).getByRole('link', { name: 'Meniu' }))
+    const menuLink = within(navigation).getByRole('link', { name: 'Meniu' })
+    menuLink.addEventListener('click', (event) => event.preventDefault(), {
+      once: true,
+    })
+    fireEvent.click(menuLink)
     expect(toggle).toHaveAttribute('aria-expanded', 'false')
   })
 
@@ -134,6 +139,69 @@ describe('Buzzy Bean landing page', () => {
     expect(
       screen.getByRole('button', { name: /English.*selected/ }),
     ).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  test('links the homepage highlights to the full menu and its categories', () => {
+    render(<App />)
+    expect(
+      screen.getByRole('link', { name: 'Vezi meniul complet' }),
+    ).toHaveAttribute('href', '/menu/')
+    expect(
+      screen.getByRole('link', { name: 'Honey Pastries' }),
+    ).toHaveAttribute('href', '/menu/#pastries')
+  })
+
+  test('renders a directly addressable menu with all products and home navigation', () => {
+    window.history.replaceState({}, '', '/menu/')
+    render(<App />)
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'Un strop de miere. O mulțime de bun.',
+    )
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(25)
+    expect(
+      screen.getByRole('heading', { name: 'Buzzy Bee Sandwich' }),
+    ).toBeInTheDocument()
+    const navigation = screen.getByRole('navigation', {
+      name: 'Navigare principală',
+    })
+    expect(
+      within(navigation).getByRole('link', { name: 'Poveste' }),
+    ).toHaveAttribute('href', '/#story')
+    expect(
+      within(navigation).getByRole('link', { name: 'Meniu' }),
+    ).toHaveAttribute('aria-current', 'page')
+    expect(
+      screen.getByRole('navigation', { name: 'Categorii din meniu' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByText('/ buc.')).toHaveLength(2)
+  })
+
+  test('translates the full menu without changing prices or product names', () => {
+    window.history.replaceState({}, '', '/menu')
+    render(<App />)
+    const beforePrices = [...document.querySelectorAll('.catalog-price')].map(
+      (price) => price.firstChild?.textContent,
+    )
+    fireEvent.click(
+      screen.getByRole('button', { name: /English.*neselectată/ }),
+    )
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'A little honey. A whole lot of good.',
+    )
+    expect(
+      screen.getByText(
+        'Twisted croissant with honey, cinnamon, and caramelised walnuts.',
+      ),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'Honey Twist' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByText('/ piece')).toHaveLength(2)
+    expect(
+      [...document.querySelectorAll('.catalog-price')].map(
+        (price) => price.firstChild?.textContent,
+      ),
+    ).toEqual(beforePrices)
   })
 
   test('provides stable, shared styling hooks for responsive presentation', () => {

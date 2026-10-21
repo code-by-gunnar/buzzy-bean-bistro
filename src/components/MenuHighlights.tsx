@@ -1,12 +1,14 @@
-import type { SiteContent } from '../content'
+import type { Language, SiteContent } from '../content'
+import { menuCategories, menuPageCopy } from '../menuContent'
 import menuPhoto from '../assets/coffee-menu-concept.webp'
 import { BrushHeading, Sparks, Wave } from './Visuals'
 
 interface MenuHighlightsProps {
   content: SiteContent
+  language: Language
 }
 
-export function MenuHighlights({ content }: MenuHighlightsProps) {
+export function MenuHighlights({ content, language }: MenuHighlightsProps) {
   return (
     <section className="menu section" id="menu" aria-labelledby="menu-title">
       <div className="page-container section-inner menu-inner">
@@ -28,16 +30,22 @@ export function MenuHighlights({ content }: MenuHighlightsProps) {
           </div>
         </div>
         <ol className="menu-list">
-          {content.menu.items.map((item, index) => (
-            <li key={item.title}>
+          {menuCategories.map((category, index) => (
+            <li key={category.id}>
               <span className="menu-number" aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <h3>
+                <a href={`/menu/#${category.id}`}>{category.name}</a>
+              </h3>
+              <p>{category.introduction[language]}</p>
             </li>
           ))}
         </ol>
+        <a className="button full-menu-action" href="/menu/">
+          {menuPageCopy[language].fullMenu}
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
       <Wave className="wave-to-atmosphere" />
     </section>

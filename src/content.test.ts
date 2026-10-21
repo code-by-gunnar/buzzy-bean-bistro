@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest'
 
 import { businessFacts, siteContent } from './content'
+import { menuCategories } from './menuContent'
 
 describe('bilingual site content', () => {
   test('contains_complete_copy_for_each_language', () => {
@@ -8,8 +9,7 @@ describe('bilingual site content', () => {
 
     expect(siteContent.ro.hero.title).toBe('Cafea bună. Zile senine.')
     expect(siteContent.en.hero.title).toBe('Good coffee. Bright days.')
-    expect(siteContent.ro.menu.items).toHaveLength(4)
-    expect(siteContent.en.menu.items).toHaveLength(4)
+    expect(menuCategories).toHaveLength(4)
     expect(siteContent.ro.visit.location).toContain('București')
     expect(siteContent.en.visit.location).toContain('Bucharest')
   })
