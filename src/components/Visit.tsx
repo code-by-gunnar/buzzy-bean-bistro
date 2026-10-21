@@ -1,5 +1,6 @@
-import logo from '../assets/buzzy-bean-logo-web.png'
+import mascot from '../assets/buzzy-mascot.webp'
 import type { SiteContent } from '../content'
+import { BrushHeading, FlightTrail, Sparks, Wave } from './Visuals'
 
 interface VisitProps {
   content: SiteContent
@@ -10,10 +11,16 @@ export function Visit({ content }: VisitProps) {
     <section className="visit section" id="visit" aria-labelledby="visit-title">
       <div className="page-container section-inner visit-inner">
         <div className="visit-intro">
-          <h2 id="visit-title">{content.visit.title}</h2>
+          <Sparks className="visit-sparks" />
+          <BrushHeading
+            id="visit-title"
+            title={content.visit.title}
+            leadingWords={content.visit.title.split(' ').length - 1}
+          />
           <div className="visit-mascot" aria-hidden="true">
-            <img src={logo} width="512" height="512" alt="" loading="lazy" />
+            <img src={mascot} width="900" height="900" alt="" loading="lazy" />
           </div>
+          <FlightTrail className="visit-trail" />
         </div>
         <div className="visit-details">
           <p className="location-status">{content.visit.location}</p>
@@ -30,6 +37,7 @@ export function Visit({ content }: VisitProps) {
           </a>
         </div>
       </div>
+      <Wave className="wave-to-footer" />
     </section>
   )
 }

@@ -12,6 +12,8 @@ export interface SiteContent {
     chooseLanguage: string
     mainNavigation: string
     footerNavigation: string
+    openMenu: string
+    closeMenu: string
     selected: string
     notSelected: string
     languageOptions: Record<Language, string>
@@ -69,13 +71,15 @@ export const siteContent: Record<Language, SiteContent> = {
       chooseLanguage: 'Alege limba',
       mainNavigation: 'Navigare principală',
       footerNavigation: 'Navigare subsol',
+      openMenu: 'Deschide navigarea',
+      closeMenu: 'Închide navigarea',
       selected: 'selectată',
       notSelected: 'neselectată',
       languageOptions: { ro: 'Română', en: 'English' },
       logoAlt: 'Buzzy Bean Café & Bistro',
       heroImageAlt: 'Cafea cu lapte și patiserie servite la o masă de cafenea',
       storyImageAlt: 'Interior luminos de cafenea cu mese din lemn și plante verzi',
-      atmosphereImageAlt: 'Prietene petrecând timp împreună într-o cafenea luminoasă',
+      atmosphereImageAlt: 'Prieteni savurând cafea împreună într-o cafenea luminoasă',
     },
     nav: {
       story: 'Poveste',
@@ -139,6 +143,8 @@ export const siteContent: Record<Language, SiteContent> = {
       chooseLanguage: 'Choose language',
       mainNavigation: 'Primary navigation',
       footerNavigation: 'Footer navigation',
+      openMenu: 'Open navigation',
+      closeMenu: 'Close navigation',
       selected: 'selected',
       notSelected: 'not selected',
       languageOptions: { ro: 'Romanian', en: 'English' },

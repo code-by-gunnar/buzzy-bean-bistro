@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height, 7rem) + 1rem);
 }
 
 body {
@@ -54,14 +55,19 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.92;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
   text-wrap: balance;
 }
 
 p {
   text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-espresso);
 }
 
 :focus-visible {
@@ -97,10 +103,6 @@ p {
 .section {
   position: relative;
   isolation: isolate;
-}
-
-section[id] {
-  scroll-margin-top: 7rem;
 }
 
 .media-frame {

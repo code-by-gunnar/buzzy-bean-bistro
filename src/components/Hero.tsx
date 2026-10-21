@@ -1,5 +1,6 @@
-import heroImage from '../assets/coffee-hero.webp'
+import heroImage from '../assets/coffee-hero-concept.webp'
 import type { SiteContent } from '../content'
+import { FlightTrail, Sparks, Wave } from './Visuals'
 
 interface HeroProps {
   content: SiteContent
@@ -13,24 +14,27 @@ export function Hero({ content }: HeroProps) {
       <div className="page-container hero-inner">
         <div className="hero-copy">
           <h1 id="hero-title">
-            <span>{firstLine}.</span>{' '}
-            <span>{secondLine}</span>
+            <Sparks className="hero-sparks-start" />
+            <span>{firstLine}.</span> <span>{secondLine}</span>
+            <Sparks className="hero-sparks-end" />
           </h1>
           <p>{content.hero.description}</p>
           <a className="button" href="#story">
             {content.hero.action}
           </a>
-          <span className="flight-path" aria-hidden="true" />
+          <FlightTrail className="hero-trail" />
         </div>
         <div className="hero-media media-frame">
           <img
             src={heroImage}
-            width="2400"
-            height="3600"
+            width="1122"
+            height="1402"
             alt={content.accessibility.heroImageAlt}
+            fetchPriority="high"
           />
         </div>
       </div>
+      <Wave className="wave-to-story" />
     </section>
   )
 }

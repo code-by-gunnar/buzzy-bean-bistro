@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Baloo 2';
-  src: url('../assets/fonts/baloo-2-800.woff2') format('woff2');
+  font-family: 'Agbalumo';
+  src: url('../assets/fonts/agbalumo-latin.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 @font-face {
@@ -31,17 +31,19 @@
 }
 
 :root {
-  --color-espresso: #481705;
+  --color-espresso: #471805;
   --color-espresso-soft: #6f321c;
-  --color-amber: #f5a500;
-  --color-amber-deep: #a85a00;
-  --color-cream: #fff4d8;
-  --color-white: #fffdf8;
+  --color-amber: #f6a700;
+  --color-amber-deep: #a65b00;
+  --color-heading-accent: #c37b00;
+  --color-honey: #ffcc4d;
+  --color-cream: #fff5dd;
+  --color-white: #fffcf5;
   --color-focus: #147c72;
-  --font-display: 'Baloo 2', 'Arial Rounded MT Bold', sans-serif;
+  --font-display: 'Agbalumo', 'Arial Rounded MT Bold', sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
-  --container: 1440px;
-  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --container: 1800px;
+  --gutter: clamp(1.5rem, 6.5vw, 7.5rem);
   --space-1: 0.5rem;
   --space-2: 0.875rem;
   --space-3: 1.25rem;

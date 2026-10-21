@@ -1,5 +1,5 @@
-import logo from '../assets/buzzy-bean-logo-web.png'
 import type { Language, SiteContent } from '../content'
+import { Brand } from './Brand'
 
 interface FooterProps {
   content: SiteContent
@@ -11,7 +11,7 @@ export function Footer({ content, language, setLanguage }: FooterProps) {
   return (
     <footer className="site-footer">
       <a className="footer-brand" href="#top" aria-label="Buzzy Bean">
-        <img src={logo} width="512" height="512" alt="" />
+        <Brand wordmarkOnly />
       </a>
       <nav aria-label={content.accessibility.footerNavigation}>
         <a href="#story">{content.nav.story}</a>
@@ -22,7 +22,10 @@ export function Footer({ content, language, setLanguage }: FooterProps) {
         <span className="footer-domain">{content.footer.domain}</span>
         <a href={`mailto:${content.visit.email}`}>{content.visit.email}</a>
       </div>
-      <div className="footer-languages" aria-label={content.accessibility.chooseLanguage}>
+      <div
+        className="footer-languages"
+        aria-label={content.accessibility.chooseLanguage}
+      >
         <button
           type="button"
           aria-pressed={language === 'ro'}

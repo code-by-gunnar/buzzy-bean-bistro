@@ -1,5 +1,6 @@
-import atmosphereImage from '../assets/cafe-atmosphere.webp'
+import atmosphereImage from '../assets/cafe-friends-concept.webp'
 import type { SiteContent } from '../content'
+import { BrushHeading, FlightTrail, Sparks, Wave } from './Visuals'
 
 interface AtmosphereProps {
   content: SiteContent
@@ -12,18 +13,24 @@ export function Atmosphere({ content }: AtmosphereProps) {
         <div className="atmosphere-media media-frame">
           <img
             src={atmosphereImage}
-            width="2400"
-            height="1600"
+            width="1448"
+            height="1086"
             alt={content.accessibility.atmosphereImageAlt}
             loading="lazy"
           />
         </div>
         <div className="atmosphere-copy">
-          <h2 id="atmosphere-title">{content.atmosphere.title}</h2>
+          <Sparks className="atmosphere-sparks" />
+          <BrushHeading
+            id="atmosphere-title"
+            title={content.atmosphere.title}
+            leadingWords={2}
+          />
           <p>{content.atmosphere.body}</p>
-          <span className="flight-path flight-path-light" aria-hidden="true" />
+          <FlightTrail className="atmosphere-trail" />
         </div>
       </div>
+      <Wave className="wave-to-visit" />
     </section>
   )
 }

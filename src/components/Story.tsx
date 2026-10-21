@@ -1,5 +1,7 @@
-import storyImage from '../assets/cafe-interior.webp'
+import storyImage from '../assets/cafe-interior-concept.webp'
+import mascot from '../assets/buzzy-mascot.webp'
 import type { SiteContent } from '../content'
+import { BrushHeading, FlightTrail, Sparks, Wave } from './Visuals'
 
 interface StoryProps {
   content: SiteContent
@@ -12,18 +14,36 @@ export function Story({ content }: StoryProps) {
         <div className="story-media media-frame">
           <img
             src={storyImage}
-            width="2400"
-            height="3000"
+            width="1448"
+            height="1086"
             alt={content.accessibility.storyImageAlt}
             loading="lazy"
           />
         </div>
         <div className="story-copy">
-          <h2 id="story-title">{content.story.title}</h2>
+          <Sparks className="story-sparks" />
+          <BrushHeading
+            id="story-title"
+            title={content.story.title}
+            leadingWords={3}
+          />
           <p>{content.story.body}</p>
-          <span className="flight-path flight-path-story" aria-hidden="true" />
+          <a className="story-link" href="#menu">
+            {content.nav.menu}
+            <span aria-hidden="true">→</span>
+          </a>
+          <FlightTrail className="story-trail" />
         </div>
       </div>
+      <img
+        className="story-mascot"
+        src={mascot}
+        width="900"
+        height="900"
+        alt=""
+        loading="lazy"
+      />
+      <Wave className="wave-to-menu" />
     </section>
   )
 }
