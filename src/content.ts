@@ -1,0 +1,190 @@
+export type Language = 'ro' | 'en'
+
+export interface MenuItem {
+  title: string
+  description: string
+}
+
+export interface SiteContent {
+  languageName: string
+  accessibility: {
+    skipToContent: string
+    chooseLanguage: string
+    logoAlt: string
+    heroImageAlt: string
+    atmosphereImageAlt: string
+  }
+  nav: {
+    story: string
+    menu: string
+    visit: string
+    primaryAction: string
+  }
+  hero: {
+    title: string
+    description: string
+    action: string
+  }
+  story: {
+    title: string
+    body: string
+    link: string
+  }
+  menu: {
+    title: string
+    items: MenuItem[]
+  }
+  atmosphere: {
+    title: string
+    body: string
+  }
+  visit: {
+    title: string
+    location: string
+    hours: Array<{ label: string; value: string }>
+    email: string
+  }
+  footer: {
+    domain: string
+  }
+}
+
+export const businessFacts = {
+  email: 'coffee@buzzybean.ro',
+  domain: 'buzzybean.ro',
+  weekdays: '07:30–19:00',
+  weekend: '08:30–18:00',
+} as const
+
+export const siteContent: Record<Language, SiteContent> = {
+  ro: {
+    languageName: 'Română',
+    accessibility: {
+      skipToContent: 'Sari la conținut',
+      chooseLanguage: 'Alege limba',
+      logoAlt: 'Buzzy Bean Café & Bistro',
+      heroImageAlt: 'Cafea cu lapte și patiserie servite la o masă de cafenea',
+      atmosphereImageAlt: 'Prietene petrecând timp împreună într-o cafenea luminoasă',
+    },
+    nav: {
+      story: 'Poveste',
+      menu: 'Meniu',
+      visit: 'Vizitează-ne',
+      primaryAction: 'Vino la noi',
+    },
+    hero: {
+      title: 'Cafea bună. Zile senine.',
+      description:
+        'Un loc luminos pentru cafea făcută cu grijă, gustări proaspete și pauze fără grabă, în București.',
+      action: 'Descoperă Buzzy Bean',
+    },
+    story: {
+      title: 'O pauză bună începe aici.',
+      body:
+        'Buzzy Bean este cafeneaua de cartier în care cafeaua atent pregătită întâlnește gustările proaspete și conversațiile fără grabă.',
+      link: 'Povestea noastră',
+    },
+    menu: {
+      title: 'Ce punem pe masă.',
+      items: [
+        {
+          title: 'Cafea & espresso',
+          description: 'Clasică, atent extrasă și exact pe gustul tău.',
+        },
+        {
+          title: 'Băuturi de sezon',
+          description: 'Rețete luminoase care se schimbă odată cu vremea.',
+        },
+        {
+          title: 'Patiserie proaspătă',
+          description: 'Ceva bun, fraged și potrivit lângă cafea.',
+        },
+        {
+          title: 'Bistro lejer',
+          description: 'Gustări simple pentru dimineți și prânzuri fără grabă.',
+        },
+      ],
+    },
+    atmosphere: {
+      title: 'Loc pentru idei, prieteni și încă o cafea.',
+      body: 'Dimineți liniștite, prânzuri lejere și conversații care merită prelungite.',
+    },
+    visit: {
+      title: 'Ne vedem în București.',
+      location: 'Locația din București va fi anunțată în curând.',
+      hours: [
+        { label: 'Luni–Vineri', value: businessFacts.weekdays },
+        { label: 'Sâmbătă–Duminică', value: businessFacts.weekend },
+      ],
+      email: businessFacts.email,
+    },
+    footer: {
+      domain: businessFacts.domain,
+    },
+  },
+  en: {
+    languageName: 'English',
+    accessibility: {
+      skipToContent: 'Skip to content',
+      chooseLanguage: 'Choose language',
+      logoAlt: 'Buzzy Bean Café & Bistro',
+      heroImageAlt: 'Latte and pastry served at a café table',
+      atmosphereImageAlt: 'Friends spending time together in a bright café',
+    },
+    nav: {
+      story: 'Story',
+      menu: 'Menu',
+      visit: 'Visit us',
+      primaryAction: 'Visit us',
+    },
+    hero: {
+      title: 'Good coffee. Bright days.',
+      description:
+        'A bright Bucharest spot for carefully made coffee, fresh bites, and unhurried breaks.',
+      action: 'Discover Buzzy Bean',
+    },
+    story: {
+      title: 'A good break starts here.',
+      body:
+        'Buzzy Bean is the neighbourhood café where carefully made coffee meets fresh bites and conversations with nowhere else to be.',
+      link: 'Our story',
+    },
+    menu: {
+      title: 'What we bring to the table.',
+      items: [
+        {
+          title: 'Coffee & espresso',
+          description: 'Classic, carefully extracted, and made just how you like it.',
+        },
+        {
+          title: 'Seasonal drinks',
+          description: 'Bright recipes that change with the weather.',
+        },
+        {
+          title: 'Fresh pastries',
+          description: 'Something flaky and delicious beside your coffee.',
+        },
+        {
+          title: 'Light bistro',
+          description: 'Simple bites for easy mornings and unhurried lunches.',
+        },
+      ],
+    },
+    atmosphere: {
+      title: 'Room for ideas, friends, and one more coffee.',
+      body: 'Quiet mornings, easy lunches, and conversations worth stretching out.',
+    },
+    visit: {
+      title: 'See you in Bucharest.',
+      location: 'Our Bucharest location is coming soon.',
+      hours: [
+        { label: 'Monday–Friday', value: businessFacts.weekdays },
+        { label: 'Saturday–Sunday', value: businessFacts.weekend },
+      ],
+      email: businessFacts.email,
+    },
+    footer: {
+      domain: businessFacts.domain,
+    },
+  },
+}
