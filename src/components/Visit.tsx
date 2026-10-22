@@ -1,4 +1,4 @@
-import mascot from '../assets/buzzy-mascot.webp'
+import { AnimatedMascot } from './AnimatedMascot'
 import type { SiteContent } from '../content'
 import { BrushHeading, FlightTrail, Sparks, Wave } from './Visuals'
 
@@ -17,8 +17,8 @@ export function Visit({ content }: VisitProps) {
             title={content.visit.title}
             leadingWords={content.visit.title.split(' ').length - 1}
           />
-          <div className="visit-mascot" aria-hidden="true">
-            <img src={mascot} width="900" height="900" alt="" loading="lazy" />
+          <div className="visit-mascot">
+            <AnimatedMascot labels={content.accessibility} />
           </div>
           <FlightTrail className="visit-trail" />
         </div>

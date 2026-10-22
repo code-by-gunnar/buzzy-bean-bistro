@@ -11,6 +11,8 @@ export interface SiteContent {
     closeMenu: string
     selected: string
     notSelected: string
+    pauseMascotAnimation: string
+    playMascotAnimation: string
     languageOptions: Record<Language, string>
     logoAlt: string
     heroImageAlt: string
@@ -69,11 +71,15 @@ export const siteContent: Record<Language, SiteContent> = {
       closeMenu: 'Închide navigarea',
       selected: 'selectată',
       notSelected: 'neselectată',
+      pauseMascotAnimation: 'Oprește animația lui Buzzy',
+      playMascotAnimation: 'Pornește animația lui Buzzy',
       languageOptions: { ro: 'Română', en: 'English' },
       logoAlt: 'Buzzy Bean Café & Bistro',
       heroImageAlt: 'Cafea cu lapte și patiserie servite la o masă de cafenea',
-      storyImageAlt: 'Interior luminos de cafenea cu mese din lemn și plante verzi',
-      atmosphereImageAlt: 'Prieteni savurând cafea împreună într-o cafenea luminoasă',
+      storyImageAlt:
+        'Interior luminos de cafenea cu mese din lemn și plante verzi',
+      atmosphereImageAlt:
+        'Prieteni savurând cafea împreună într-o cafenea luminoasă',
     },
     nav: {
       story: 'Poveste',
@@ -89,8 +95,7 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     story: {
       title: 'O pauză bună începe aici.',
-      body:
-        'Buzzy Bean este cafeneaua de cartier în care cafeaua atent pregătită întâlnește gustările proaspete și conversațiile fără grabă.',
+      body: 'Buzzy Bean este cafeneaua de cartier în care cafeaua atent pregătită întâlnește gustările proaspete și conversațiile fără grabă.',
     },
     menu: {
       title: 'Ce punem pe masă.',
@@ -123,6 +128,8 @@ export const siteContent: Record<Language, SiteContent> = {
       closeMenu: 'Close navigation',
       selected: 'selected',
       notSelected: 'not selected',
+      pauseMascotAnimation: 'Pause Buzzy animation',
+      playMascotAnimation: 'Play Buzzy animation',
       languageOptions: { ro: 'Romanian', en: 'English' },
       logoAlt: 'Buzzy Bean Café & Bistro',
       heroImageAlt: 'Latte and pastry served at a café table',
@@ -143,8 +150,7 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     story: {
       title: 'A good break starts here.',
-      body:
-        'Buzzy Bean is the neighbourhood café where carefully made coffee meets fresh bites and conversations with nowhere else to be.',
+      body: 'Buzzy Bean is the neighbourhood café where carefully made coffee meets fresh bites and conversations with nowhere else to be.',
     },
     menu: {
       title: 'What we bring to the table.',

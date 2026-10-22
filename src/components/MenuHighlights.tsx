@@ -29,19 +29,16 @@ export function MenuHighlights({ content, language }: MenuHighlightsProps) {
             />
           </div>
         </div>
-        <ol className="menu-list">
-          {menuCategories.map((category, index) => (
+        <ul className="menu-list" role="list">
+          {menuCategories.map((category) => (
             <li key={category.id}>
-              <span className="menu-number" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
-              </span>
               <h3>
                 <a href={`/menu/#${category.id}`}>{category.name}</a>
               </h3>
               <p>{category.introduction[language]}</p>
             </li>
           ))}
-        </ol>
+        </ul>
         <a className="button full-menu-action" href="/menu/">
           {menuPageCopy[language].fullMenu}
           <span aria-hidden="true">→</span>

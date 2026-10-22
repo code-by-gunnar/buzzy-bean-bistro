@@ -1,5 +1,28 @@
 # Image sources
 
+## Animated Buzzy — owner-supplied video
+
+- Source: `bring-the-photo-to-life-with-subtle-zwrag0k4hf.mp4`, supplied by
+  the owner. Original: 960×960, H.264, 30 fps, 5.367 seconds, no alpha.
+- Website asset: `buzzy-mascot-animated.webp`, 384×384, 12 fps, 126 frames,
+  10.5 seconds, looping RGBA WebP at quality 75. Used only by Visit.
+  A forward-and-back traversal reuses the original motion without a hard
+  endpoint jump; the return leg intentionally reverses the gestures and steam.
+- `scripts/prepare-buzzy-animation.py` removes boundary-connected near-white
+  background while retaining enclosed pale details. Buzzy-specific component
+  bounds remove the cup-handle and elbow background pockets. Edge alpha and
+  colour decontamination reduce white fringes. No scene regeneration is used.
+- Source-video processing and transparent WebM/PNG alternatives are retained
+  locally in `/Users/gunnar/Documents/ChatGPT/edit/buzzy-alpha-preview-v4/`.
+  The web loop is packaged by `scripts/package-buzzy-loop.py` and retained in
+  `/Users/gunnar/Documents/ChatGPT/edit/buzzy-alpha-optimised-12fps/` (2.80 MB),
+  27% smaller than the approved 3.82 MB preview at the same resolution.
+  Source remains unchanged. There is no audio track.
+- Animated WebP avoids depending on WebM alpha support for website playback.
+  The original static mascot is retained for reduced motion, the pause control,
+  load failures, and every other existing mascot placement.
+- Pausing displays the original still; restarting begins the animation again.
+
 ## Interior replacement — owner supplied
 
 - Selected source: `images/kling_20261022_IMAGE_Interior_p_1574_1.png`.

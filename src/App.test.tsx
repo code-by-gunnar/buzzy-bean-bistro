@@ -156,6 +156,17 @@ describe('Buzzy Bean landing page', () => {
     ).toHaveAttribute('href', '/menu/#pastries')
   })
 
+  test('presents menu categories without numbering or an implied sequence', () => {
+    const { container } = render(<App />)
+    const categories = container.querySelector('#menu .menu-list')!
+    expect(categories.tagName).toBe('UL')
+    expect(
+      within(categories as HTMLElement).getAllByRole('listitem'),
+    ).toHaveLength(4)
+    expect(categories.querySelector('.menu-number')).toBeNull()
+    expect(categories).not.toHaveTextContent(/\b0[1-4]\b/)
+  })
+
   test('renders a directly addressable menu with all products and home navigation', () => {
     window.history.replaceState({}, '', '/menu/')
     render(<App />)
